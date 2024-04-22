@@ -1,0 +1,46 @@
+{
+  "name": "@rugaard/laravel-encrypter",
+  "version": "0.0.0",
+  "description": "Laravel Encrypter for JavaScript",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rugaard/laravel-encrypter.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "source": "src/index.ts",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.esm.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "php-serialize": "^4.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "rollup": "^4.15.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-esbuild": "^6.1.1"
+  }
+}
